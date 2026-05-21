@@ -1,0 +1,428 @@
+:root {
+  --primary-color: #06b6d4;
+  --primary-hover: #0891b2;
+  --background-color: #e2e8f0;
+  --surface-color: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #cbd5e1;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+section {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--background-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Formulário de Cadastro */
+#formCadastro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+#formCadastro label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+#formCadastro input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #f9fafb;
+}
+
+#formCadastro input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+  background-color: #ffffff;
+}
+
+/* Elementos que ocupam toda a largura do formulário */
+#formCadastro .full-width,
+#formCadastro button {
+  grid-column: 1 / -1;
+}
+
+/* Layout do Cadastro (Formulário + Ilustração) */
+.cadastro-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cadastro-ilustracao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cadastro-ilustracao svg {
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+#mensagemErro {
+  color: var(--error-color);
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Painel de Listagem */
+#busca {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+}
+
+#busca:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+#tabelaAlunos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+#tabelaAlunos th,
+#tabelaAlunos td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#tabelaAlunos th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#tabelaAlunos tbody tr {
+  transition: background-color 0.15s;
+}
+
+#tabelaAlunos tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Central de Desafios */
+#gamificacao p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+#desafios {
+  display: flex;
+  gap: 1rem;
+}
+
+#desafios button {
+  flex: 1;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  margin-top: 0;
+}
+
+#desafios button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+
+/* Estados Dinâmicos da Ilustração */
+
+/* Lâmpada - Padrão Desativado */
+.cadastro-ilustracao .lampada-glow {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.cadastro-ilustracao .lampada-vidro {
+  fill: #cbd5e1;
+  stroke: #94a3b8;
+  transition: fill 0.5s ease, stroke 0.5s ease;
+}
+.cadastro-ilustracao .lampada-filamento {
+  stroke: #94a3b8;
+  transition: stroke 0.5s ease;
+}
+
+/* Lâmpada - Ativado (Quando tem alunos) */
+.cadastro-ilustracao.com-alunos .lampada-glow {
+  opacity: 0.3;
+  animation: pulse-glow 2s infinite alternate;
+}
+.cadastro-ilustracao.com-alunos .lampada-vidro {
+  fill: #fef08a;
+  stroke: #ca8a04;
+}
+.cadastro-ilustracao.com-alunos .lampada-filamento {
+  stroke: #eab308;
+}
+
+/* Troféu - Padrão Desativado */
+.cadastro-ilustracao .trofeu-glow {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.cadastro-ilustracao .trofeu-corpo,
+.cadastro-ilustracao .trofeu-suporte {
+  fill: #e2e8f0;
+  stroke: #94a3b8;
+  transition: fill 0.5s ease, stroke 0.5s ease;
+}
+.cadastro-ilustracao .trofeu-alca {
+  stroke: #94a3b8;
+  transition: stroke 0.5s ease;
+}
+.cadastro-ilustracao .trofeu-base {
+  fill: #cbd5e1;
+  transition: fill 0.5s ease;
+}
+
+/* Troféu - Ativado (Quando tem alunos APROVADOS) */
+.cadastro-ilustracao.com-aprovados .trofeu-glow {
+  opacity: 0.4;
+  animation: pulse-glow 2s infinite alternate 0.5s;
+}
+.cadastro-ilustracao.com-aprovados .trofeu-corpo,
+.cadastro-ilustracao.com-aprovados .trofeu-suporte {
+  fill: #fbbf24;
+  stroke: #d97706;
+}
+.cadastro-ilustracao.com-aprovados .trofeu-alca {
+  stroke: #d97706;
+}
+.cadastro-ilustracao.com-aprovados .trofeu-base {
+  fill: #d97706;
+}
+
+/* Código na Tela - Padrão Desativado */
+.cadastro-ilustracao .linha-codigo {
+  opacity: 0.25;
+  transition: opacity 0.5s ease;
+}
+.cadastro-ilustracao .tela-fundo {
+  fill: #334155;
+  transition: fill 0.5s ease;
+}
+
+/* Código na Tela - Ativado */
+.cadastro-ilustracao.com-alunos .linha-codigo {
+  opacity: 1;
+}
+.cadastro-ilustracao.com-alunos .tela-fundo {
+  fill: #0f172a;
+}
+
+/* Tela de Erro - Padrão Oculto */
+.cadastro-ilustracao .tela-erro-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Quando o último aluno cadastrado for reprovado */
+.cadastro-ilustracao.ultimo-reprovado .tela-erro-overlay {
+  opacity: 1;
+}
+
+/* Lâmpada - Vermelha (Reprovado) */
+.cadastro-ilustracao.ultimo-reprovado .lampada-glow {
+  opacity: 0.55;
+  fill: #ef4444;
+  animation: pulse-glow 1.5s infinite alternate;
+}
+.cadastro-ilustracao.ultimo-reprovado .lampada-vidro {
+  fill: #fca5a5;
+  stroke: #b91c1c;
+}
+.cadastro-ilustracao.ultimo-reprovado .lampada-filamento {
+  stroke: #b91c1c;
+}
+
+/* Animações individuais dos elementos do SVG */
+#ilustracaoTrofeu {
+  animation: float-trophy 5s ease-in-out infinite alternate;
+}
+#ilustracaoLampada {
+  animation: float-lamp 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes float-trophy {
+  0% { transform: translate(50px, 140px) translateY(0px); }
+  100% { transform: translate(50px, 140px) translateY(-8px); }
+}
+
+@keyframes float-lamp {
+  0% { transform: translate(300px, 200px) translateY(0px); }
+  100% { transform: translate(300px, 200px) translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.5; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #formCadastro {
+    grid-template-columns: 1fr;
+  }
+
+  #desafios {
+    flex-direction: column;
+  }
+
+  .cadastro-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cadastro-ilustracao {
+    order: -1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Animação dos Confetes */
+.confete-dinamico {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+@keyframes cair-e-girar {
+  0% {
+    transform: translate3d(var(--x-start), var(--y-start), 0) rotate(0deg);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--x-end), 105vh, 0) rotate(var(--rot-end));
+    opacity: 0;
+  }
+}

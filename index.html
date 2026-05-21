@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Escolar Integrado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>EduTech Dash - Painel Escolar v1.0</h1>
+  </header>
+
+  <!-- 1. Formulário de Cadastro -->
+  <section id="cadastro">
+    <h2>Cadastro de Estudante</h2>
+    <div class="cadastro-wrapper">
+      <form id="formCadastro">
+        <div class="input-group full-width">
+          <label for="nome">Nome do Aluno:</label>
+          <input type="text" id="nome" required>
+        </div>
+
+        <div class="input-group">
+          <label for="nota1">Nota 1:</label>
+          <input type="number" id="nota1" min="0" max="10" step="0.1" required>
+        </div>
+
+        <div class="input-group">
+          <label for="nota2">Nota 2:</label>
+          <input type="number" id="nota2" min="0" max="10" step="0.1" required>
+        </div>
+
+        <div class="input-group">
+          <label for="nota3">Nota 3:</label>
+          <input type="number" id="nota3" min="0" max="10" step="0.1" required>
+        </div>
+
+        <div class="input-group">
+          <label for="presencas">Total de Presenças:</label>
+          <input type="number" id="presencas" min="0" required>
+        </div>
+
+        <div class="input-group">
+          <label for="aulasTotais">Aulas Totais:</label>
+          <input type="number" id="aulasTotais" min="1" required>
+        </div>
+
+        <div class="input-group">
+          <label for="telefone">Telefone do Responsável (com DDD):</label>
+          <input type="tel" id="telefone" maxlength="13" placeholder="">
+        </div>
+
+        <div class="input-group">
+          <label for="emailResponsavel">E-mail do Responsável:</label>
+          <input type="email" id="emailResponsavel">
+        </div>
+
+        <button type="submit">Cadastrar Estudante</button>
+      </form>
+
+      <!-- Ilustração Educacional -->
+      <div id="cadastroIlustracao" class="cadastro-ilustracao">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background Glow -->
+          <circle cx="250" cy="200" r="150" fill="url(#paint0_radial)" opacity="0.25" />
+
+          <!-- Orbit line -->
+          <ellipse cx="250" cy="200" rx="180" ry="80" stroke="var(--primary-color)" stroke-width="1.5"
+            stroke-dasharray="6 6" transform="rotate(-15 250 200)" />
+          <circle cx="90" cy="150" r="6" fill="var(--primary-color)" />
+          <circle cx="410" cy="250" r="8" fill="var(--primary-color)" opacity="0.8" />
+
+          <!-- Abstract floaters -->
+          <rect x="360" y="80" width="24" height="24" rx="6" transform="rotate(45 360 80)" fill="var(--primary-color)"
+            opacity="0.3" />
+          <polygon points="120,80 130,95 110,95" fill="var(--primary-hover)" opacity="0.4" />
+
+          <text x="60" y="270" font-family="'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="bold"
+            fill="var(--primary-color)" opacity="0.25">&lt; /&gt;</text>
+          <text x="380" y="140" font-family="'Segoe UI', system-ui, sans-serif" font-size="36" font-weight="bold"
+            fill="var(--primary-color)" opacity="0.2">{ }</text>
+
+          <!-- Computer mockup -->
+          <rect x="130" y="120" width="240" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4" />
+          <rect x="142" y="132" width="216" height="106" rx="6" class="tela-fundo" fill="#334155" />
+
+          <!-- Screen code mock -->
+          <rect x="160" y="150" width="80" height="8" rx="4" class="linha-codigo" fill="#38bdf8" />
+          <rect x="160" y="166" width="120" height="8" rx="4" class="linha-codigo" fill="#a78bfa" />
+          <rect x="180" y="182" width="60" height="8" rx="4" class="linha-codigo" fill="#34d399" />
+          <rect x="160" y="198" width="100" height="8" rx="4" class="linha-codigo" fill="#fb7185" />
+          <circle cx="320" cy="160" r="15" class="linha-codigo" fill="var(--primary-color)" opacity="0.8" />
+
+          <!-- Error Overlay Screen (Aparece ao reprovar) -->
+          <g class="tela-erro-overlay">
+            <rect x="142" y="132" width="216" height="106" rx="6" fill="#ef4444" />
+            <!-- Desenho do X de erro -->
+            <path d="M235 170L265 200M265 170L235 200" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+            <text x="250" y="220" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold"
+              fill="#ffffff" text-anchor="middle">REPROVADO</text>
+          </g>
+
+          <!-- Computer base -->
+          <path d="M100 270H400L415 285C415 288.3 412.3 291 409 291H91C87.7 291 85 288.3 85 285L100 270Z" fill="#e2e8f0"
+            stroke="#cbd5e1" stroke-width="3" />
+          <rect x="220" y="272" width="60" height="6" rx="3" fill="#cbd5e1" />
+
+          <!-- Graduation Cap -->
+          <g transform="translate(180, 50)">
+            <path d="M70 10L135 30L70 50L5 30L70 10Z" fill="var(--primary-color)" stroke="#ffffff" stroke-width="2" />
+            <path d="M35 38.5V50C35 58 50 63 70 63C90 63 105 58 105 50V38.5" fill="var(--primary-hover)" />
+            <path d="M70 30L120 42V55" stroke="#fbbf24" stroke-width="2" fill="none" />
+            <rect x="117" y="55" width="6" height="12" rx="1" fill="#fbbf24" />
+          </g>
+
+          <!-- Glowing Lightbulb -->
+          <g id="ilustracaoLampada" transform="translate(300, 200)">
+            <circle cx="30" cy="30" r="35" class="lampada-glow" fill="#fef08a" opacity="0.2" />
+            <rect x="23" y="44" width="14" height="10" rx="2" fill="#94a3b8" />
+            <path d="M25 54H35L33 58H27L25 54Z" fill="#64748b" />
+            <path
+              d="M15 28C15 19.7 21.7 13 30 13C38.3 13 45 19.7 45 28C45 33.5 41.5 38.2 38 41V44H22V41C18.5 38.2 15 33.5 15 28Z"
+              class="lampada-vidro" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" />
+            <path d="M26 35L29 27H31L34 35" class="lampada-filamento" stroke="#94a3b8" stroke-width="2" fill="none" />
+          </g>
+
+          <!-- Glowing Trophy -->
+          <g id="ilustracaoTrofeu" transform="translate(50, 140)">
+            <circle cx="30" cy="35" r="30" class="trofeu-glow" fill="#fef08a" opacity="0" />
+            <path d="M12 12H48V28C48 38 38 43 30 43C22 43 12 38 12 28V12Z" class="trofeu-corpo" fill="#e2e8f0"
+              stroke="#94a3b8" stroke-width="2" />
+            <path d="M12 16H5C3.3 16 2 17.3 2 19V23C2 24.7 3.3 26 5 26H12" class="trofeu-alca" fill="none"
+              stroke="#94a3b8" stroke-width="2" />
+            <path d="M48 16H55C56.7 16 58 17.3 58 19V23C58 24.7 56.7 26 55 26H48" class="trofeu-alca" fill="none"
+              stroke="#94a3b8" stroke-width="2" />
+            <path d="M25 43H35V53H25V43Z" class="trofeu-suporte" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+            <rect x="18" y="53" width="24" height="6" rx="2" class="trofeu-base" fill="#cbd5e1" />
+            <path d="M30 20L32 24.5L37 24.5L33 27.5L35 32L30 29.5L25 32L27 27.5L23 24.5L28 24.5L30 20Z"
+              class="trofeu-estrela" fill="#ffffff" />
+          </g>
+
+          <defs>
+            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+              transform="translate(250 200) rotate(90) scale(150)">
+              <stop offset="0" stop-color="var(--primary-color)" />
+              <stop offset="1" stop-color="var(--primary-color)" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div id="mensagemErro"></div>
+  </section>
+
+  <!-- 2. Painel de Listagem -->
+  <section id="painel">
+    <h2>Lista de Estudantes</h2>
+    <input type="text" id="busca" placeholder="Buscar por nome...">
+    <div class="table-container">
+      <table id="tabelaAlunos">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Média</th>
+            <th>Conceito</th>
+            <th>Status</th>
+            <th>Presença</th>
+            <th>E-mail Responsável</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Linhas geradas dinamicamente pelo script.js -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Central de Desafios -->
+  <section id="gamificacao">
+    <h2>Central de Desafios</h2>
+    <p>Selecione um aluno e participe de minijogos matemáticos!</p>
+    <div id="desafios">
+      <button id="desafioMedia">Desafio da Média</button>
+      <button id="desafioBusca">Desafio de Busca</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 EduTech Dash v1.0. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Gabriel Pessoa - AULA DE LÓGICA DE PROGRAMAÇÃO E ALGORITMOS ADA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
